@@ -46,14 +46,16 @@ var Cz = Cz || {};
 				if (lines.length == 1) {
 					if (!this.enterPressed) {
 						line = this.extractStartLine(lines[0]);
-						this.selection.replace("\n" + line, true, false);
 						this.enterPressed = !!line.length;
+						if (line.length) {
+							this.selection.replace("\n" + line, true, false);
+						} else {
+							return true;
+						}
 					} else {
-						// var start = this.selection.getStartLinePos();
-						// var end = this.selection.getEndLinePos();
-						// this.selection.setPosition(start, end);
-						this.selection.replaceLines("\n", false, false);
+						this.selection.replaceLines('', false, false);
 						this.enterPressed = false;
+						return true;
 					}
 					return this.cancelEvent(e);
 				}
