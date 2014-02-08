@@ -46,8 +46,12 @@ var Cz = Cz || {};
 				if (lines.length == 1) {
 					if (!this.enterPressed) {
 						line = this.extractStartLine(lines[0]);
-						this.selection.replace("\n" + line, true, false);
 						this.enterPressed = !!line.length;
+						if (line.length) {
+							this.selection.replace("\n" + line, true, false);
+						} else {
+							return true;
+						}
 					} else {
 						this.selection.replaceLines('', false, false);
 						this.enterPressed = false;
