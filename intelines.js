@@ -52,8 +52,9 @@ var Cz = Cz || {};
 						// var start = this.selection.getStartLinePos();
 						// var end = this.selection.getEndLinePos();
 						// this.selection.setPosition(start, end);
-						this.selection.replaceLines("\n", false, false);
+						this.selection.replaceLines('', false, false);
 						this.enterPressed = false;
+						return true;
 					}
 					return this.cancelEvent(e);
 				}
