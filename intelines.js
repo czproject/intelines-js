@@ -49,9 +49,6 @@ var Cz = Cz || {};
 						this.selection.replace("\n" + line, true, false);
 						this.enterPressed = !!line.length;
 					} else {
-						// var start = this.selection.getStartLinePos();
-						// var end = this.selection.getEndLinePos();
-						// this.selection.setPosition(start, end);
 						this.selection.replaceLines('', false, false);
 						this.enterPressed = false;
 						return true;
