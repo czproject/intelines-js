@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="author" content="Jan Pecha, http://janpecha.iunas.cz/">
+	<meta name="viewport" content="width=device-width">
+
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			line-height: 1.6em;
+			background: #fbfbfb;
+		}
+
+		#wrapper {
+			max-width: 1024px;
+			margin: 0 auto;
+			padding-top: 2em;
+			padding-bottom: 1em;
+		}
+
+		#footer {
+			font-size: 90%;
+			margin-top: 4em;
+			color: gray;
+		}
+
+		h1, h2, h3 {
+			color: #444;
+		}
+
+		h2 {
+			border-top: 1px solid #ccc;
+			padding-top: 0.7em;
+			margin-top: 3em;
+		}
+
+		h1 + h2 {
+			margin-top: 0;
+		}
+
+		h3 {
+			margin-bottom: 0.3em;
+		}
+
+		h2, h3 {
+			position: relative;
+		}
+
+		h2:hover:after, h3:hover:after {
+			content: "#" attr(id);
+			font-size: 50%;
+			margin-left: 0.7em;
+			position: absolute;
+			top: 1.5em;
+		}
+
+		h3:hover:after {
+			top: 0.4em;
+			font-size: 60%;
+		}
+
+		p {
+			margin: 0 0 1em;
+		}
+
+		textarea {
+			margin: 0 auto 1em;
+			display: block;
+			padding: 1em;
+			line-height: 1.4em;
+			resize: none;
+		}
+
+		hr {
+			border: none;
+			border-top: 1px dotted silver;
+		}
+
+		a:link {
+			color: #0044aa;
+		}
+
+		a:visited {
+			color: #00255c;
+		}
+
+		a:hover {
+			color: #d22;
+		}
+
+		.toolbar {
+			margin-bottom: 1em;
+			text-align: center;
+		}
+
+		.description {
+			margin: 0;
+			color: #333;
+		}
+
+		.avatar {
+			border-radius: 4px;
+			display: block;
+			border: none;
+		}
+
+		pre {
+			padding: 1em;
+			background-color: #f0f7ff;
+			border: 1px solid #9fc8f1;
+			border-radius: 4px;
+			-webkit-box-shadow: inset 0px 0px 4px 0px #9fc8f1;
+			box-shadow: inset 0px 0px 4px 0px #9fc8f1;
+		}
+
+		.h-keyword {
+			font-weight: bold;
+			color: maroon;
+		}
+
+		.h-string {
+			color: green;
+		}
+
+		.h-object {
+			color: navy;
+		}
+
+		.h-var {
+			color: #75b;
+		}
+	</style>
+
+	<title>Cz\Intelines.js - JS library</title>
+</head>
+<body>
+	<div id="wrapper">
+		<h1>Cz\Intelines.js - JS library</h1>
+
+		<h2 id="example">Example</h2>
+		<textarea id="myarea" rows="20" cols="80" spellcheck="false" wrap="off">
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Duis aute irure dolor
+in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+Fusce tellus. Duis ante orci, molestie vitae vehicula venenatis, tincidunt ac
+pede. Maecenas sollicitudin. Integer tempor. Curabitur sagittis hendrerit ante.
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Integer in sapien.
+
+Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus
+saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
+
+Vivamus luctus egestas leo. Curabitur sagittis hendrerit ante. Quisque tincidunt
+scelerisque libero. Etiam neque. Nullam faucibus mi quis velit. Ut enim ad minim
+veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat. Etiam sapien elit, consequat eget, tristique non, venenatis quis,
+ante. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis
+voluptatibus maiores alias consequatur aut perferendis doloribus asperiores
+repellat. Aenean vel massa quis mauris vehicula lacinia. Proin pede metus,
+vulputate nec, fermentum fringilla, vehicula vitae, justo.
+</textarea>
+
+		<div id="footer">
+			Author: <a href="http://janpecha.iunas.cz/">Jan Pecha</a> &copy; 2014
+			<a href="http://janpecha.iunas.cz/"><img class="avatar" src="http://www.gravatar.com/avatar/c9c2bb1ce4ab220348c179220ae947dc.png?s=40" width="40" height="40"></a>
+		</div>
+	</div>
+
+	<script src="CzSelection.js"></script>
+	<script src="CzTextAreaSelection.js"></script>
+	<script src="intelines.js"></script>
+	<script type="text/javascript">
+		var textarea = document.getElementById('myarea');
+		var selection = new Cz.TextAreaSelection(textarea);
+		var intelines = new Cz.IntelinesJs(textarea, selection);
+	</script>
+</body>
+</html>
